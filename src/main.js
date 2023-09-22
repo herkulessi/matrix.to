@@ -21,6 +21,8 @@ import {Preferences} from "./Preferences.js";
 import {guessApplicablePlatforms} from "./Platform.js";
 
 export async function main(container) {
+    location.href = location.href.replace("/room/" , "/");
+    location.href = location.href.replace("/user/" , "/");
     const vm = new RootViewModel({
         request: xhrRequest,
         openLink: url => location.href = url,
