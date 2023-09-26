@@ -21,8 +21,8 @@ import {Preferences} from "./Preferences.js";
 import {guessApplicablePlatforms} from "./Platform.js";
 
 export async function main(container) {
-    if(location.href.includes("/#/room/") || location.href.includes("/#/user/"))
-        location.href = location.href.replace("/#/room/", "/#/").replace("/#/user/", "/#/");
+    if(location.hash.startsWith("#/room/") || location.hash.startsWith("#/user/"))
+        location.hash = location.hash.slice(6);
 
     const vm = new RootViewModel({
         request: xhrRequest,
